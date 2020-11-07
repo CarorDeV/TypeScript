@@ -14,7 +14,7 @@ and limitations under the License.
 ***************************************************************************** */
 
 declare namespace ts {
-    const versionMajorMinor = "4.1";
+    const versionMajorMinor = "4.2";
     /** The version of the TypeScript compiler release */
     const version: string;
     /**
@@ -2832,6 +2832,7 @@ declare namespace ts {
         noUnusedLocals?: boolean;
         noUnusedParameters?: boolean;
         noImplicitUseStrict?: boolean;
+        noPropertyAccessFromIndexSignature?: boolean;
         assumeChangesOnlyAffectDirectDependencies?: boolean;
         noLib?: boolean;
         noResolve?: boolean;
@@ -2880,6 +2881,8 @@ declare namespace ts {
         watchDirectory?: WatchDirectoryKind;
         fallbackPolling?: PollingWatchKind;
         synchronousWatchDirectory?: boolean;
+        excludeDirectories?: string[];
+        excludeFiles?: string[];
         [option: string]: CompilerOptionsValue | undefined;
     }
     export interface TypeAcquisition {
